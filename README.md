@@ -2,7 +2,10 @@
 
 Library API adalah REST API untuk mengelola data anggota perpustakaan, buku,
 dan peminjaman buku. API ini dibangun menggunakan Node.js, Express.js, dan
-Supabase PostgreSQL dengan arsitektur MVC.
+Supabase PostgreSQL dengan arsitektur MVC. 
+
+Dibuat oleh Galileo Athari Muhammad (NIM 21120124130099, Kelompok 07 Shift 01) 
+untuk Responsi Modul 1 Praktikum Pemrograman Perangkat Bergerak.
 
 ## Tujuan Proyek
 
@@ -306,11 +309,10 @@ SUPABASE_SERVICE_ROLE_KEY
 
 Link hasil deployment:
 
-> Belum tersedia. Setelah deployment dibuat, ganti bagian ini dengan URL
-> publik Vercel, misalnya `https://library-api.vercel.app`.
+https://library-api-responsi-mod1-ppb.vercel.app/
 
 Contoh pemeriksaan setelah deployment:
 
 ```bash
-curl https://library-api.vercel.app/health
+curl https://library-api-responsi-mod1-ppb.vercel.app/health
 ```
