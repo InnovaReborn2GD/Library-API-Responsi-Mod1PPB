@@ -25,6 +25,8 @@ API juga mendukung filter peminjaman dan pagination, misalnya
 
 ```text
 .
+├── api/
+│   └── index.js         # Handler serverless Vercel
 ├── src/
 │   ├── config/          # Konfigurasi koneksi Supabase
 │   ├── controllers/     # Handler request dan response HTTP
@@ -33,7 +35,7 @@ API juga mendukung filter peminjaman dan pagination, misalnya
 │   ├── validation/      # Validasi payload dan query
 │   ├── views/           # Placeholder struktur MVC; API mengembalikan JSON
 │   ├── app.js           # Konfigurasi Express dan middleware
-│   └── server.js        # Entry point lokal dan serverless Vercel
+│   └── server.js        # Entry point server lokal dan factory runtime
 ├── supabase/
 │   └── schema.sql       # Schema tabel, constraint, dan trigger PostgreSQL
 ├── test/                # Test API dan validasi
@@ -291,7 +293,9 @@ server.
 ## Deployment Vercel
 
 Project dikonfigurasi untuk Vercel melalui
-[`vercel.json`](./vercel.json). Saat melakukan deployment, tambahkan
+[`vercel.json`](./vercel.json). Handler serverless eksplisit berada di
+[`api/index.js`](./api/index.js), sedangkan [`src/app.js`](./src/app.js)
+hanya digunakan sebagai modul internal. Saat melakukan deployment, tambahkan
 environment variables berikut pada project Vercel:
 
 ```text
