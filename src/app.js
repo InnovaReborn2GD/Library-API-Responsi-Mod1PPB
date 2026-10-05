@@ -42,4 +42,24 @@ function createApp({ models } = {}) {
   return app;
 }
 
-module.exports = { createApp };
+let productionApp;
+
+function getProductionApp() {
+  if (!productionApp) {
+    const { createSupabaseClient } = require('./config/supabase');
+    const { createModels } = require('./models');
+
+    productionApp = createApp({
+      models: createModels(createSupabaseClient()),
+    });
+  }
+
+  return productionApp;
+}
+
+function handler(req, res) {
+  return getProductionApp()(req, res);
+}
+
+module.exports = handler;
+module.exports.createApp = createApp;

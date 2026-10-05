@@ -295,8 +295,9 @@ server.
 Project dikonfigurasi untuk Vercel melalui
 [`vercel.json`](./vercel.json). Handler serverless eksplisit berada di
 [`api/index.js`](./api/index.js), sedangkan [`src/app.js`](./src/app.js)
-hanya digunakan sebagai modul internal. Saat melakukan deployment, tambahkan
-environment variables berikut pada project Vercel:
+menyediakan factory aplikasi untuk testing serta fallback handler yang valid
+untuk kompatibilitas dengan konfigurasi Vercel lama. Saat melakukan deployment,
+tambahkan environment variables berikut pada project Vercel:
 
 ```text
 SUPABASE_URL
