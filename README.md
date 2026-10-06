@@ -293,6 +293,17 @@ server.
 | `npm run dev` | Menjalankan server lokal dengan Nodemon |
 | `npm test` | Menjalankan seluruh test |
 
+## Postman Collection
+
+Collection untuk menguji seluruh endpoint tersedia di
+[`postman/Library-API.postman_collection.json`](./postman/Library-API.postman_collection.json).
+Import file tersebut ke Postman, lalu atur variable `baseUrl` menjadi
+`http://localhost:3000` untuk pengujian lokal atau URL deployment Vercel.
+
+Jalankan request dalam urutan folder bila ingin menggunakan alur CRUD lengkap:
+buat member dan buku terlebih dahulu, buat loan menggunakan ID yang tersimpan
+otomatis, lalu jalankan request pengembalian dan penghapusan.
+
 ## Deployment Vercel
 
 Project dikonfigurasi untuk Vercel melalui
